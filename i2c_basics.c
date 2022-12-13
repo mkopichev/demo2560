@@ -3,7 +3,7 @@
 uint8_t i2c_mutex=VACANT;
 
 void I2cInit(void){
-	TWBR=40;//(uint8_t)((F_CPU/SCL_FREQ)-16)/(2*4);
+	TWBR=48;//(uint8_t)((F_CPU/SCL_FREQ)-16)/(2*4);
 }
 
 void I2cStart(void){

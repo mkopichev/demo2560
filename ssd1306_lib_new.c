@@ -8,6 +8,7 @@ OLED LCD SSD1306 �������.
 */
 
 #include "include/ssd1306_lib_new.h"
+#include "include/oled_demo.h"
 
 void LCD_init(void)
 {
@@ -91,7 +92,7 @@ void LCD_Contrast(uint8_t set_contrast)
   LCD_Commmand(COMAND, set_contrast);
 }
 
-void LCD_DrawImage(uint8_t* image)//if (0) - clear screen
+void LCD_DrawImage(const PROGMEM uint8_t* image)//if (0) - clear screen
 {
  uint16_t x;
  uint8_t tmp;

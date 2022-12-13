@@ -95,13 +95,10 @@ PORTD |= (1<<1);//pull-up
  
  for(tmp=0;tmp<3;tmp++)//�������� ������
   {
-    // LCD_DrawImage(dog0);  
-    // LCD_DrawImage(dog1);
-    // LCD_DrawImage(dog2);
-    // LCD_DrawImage(dog3);
-    // LCD_DrawImage(dog4);
-    // LCD_DrawImage(dog5);
-    // LCD_DrawImage(dog6);        
+    LCD_DrawImage(dog0);  
+    LCD_DrawImage(dog1);
+    LCD_DrawImage(dog2);
+    LCD_DrawImage(dog3);      
   } 
   
    LCD_Commmand(COMAND, SSD1306_INVERTDISPLAY); 

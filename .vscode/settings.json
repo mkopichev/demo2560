@@ -2,12 +2,15 @@
   "AVR.reporter.arguments": [
     "-C"
   ],
-  "AVR.source.compiler": "/opt/homebrew/bin/avr-gcc",
-  "AVR.programmer.tool": "/opt/homebrew/bin/avrdude",
+  "AVR.source.compiler": "C:\\Users\\Michael\\avr8-gnu-toolchain-win32_x86_64\\bin\\avr-gcc.exe",
+  "AVR.programmer.tool": "C:\\Users\\Michael\\avrdude-6.1-svn-20131205-mingw32\\avrdude.exe",
   "AVR.source.libraries": [],
   "AVR.device.type": "atmega2560",
   "AVR.device.frequency": 11059200,
   "AVR.programmer.type": "usbasp",
   "AVR.programmer.port": "usb",
-  "AVR.programmer.rate": 125000
+  "AVR.programmer.rate": 125000,
+  "files.associations": {
+    "fonts_pictures_oled.h": "c"
+  }
 }

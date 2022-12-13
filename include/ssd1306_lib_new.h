@@ -8,7 +8,7 @@
 void LCD_init(void);  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void LCD_Commmand(uint8_t ControByte, uint8_t DataByte); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void LCD_Goto(uint8_t x, uint8_t y);    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-void LCD_DrawImage(uint8_t* image); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½  (0)- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+void LCD_DrawImage(const uint8_t* image); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½  (0)- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void LCD_Contrast(uint8_t set_contrast); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 0 ï¿½ï¿½ 255
 void LCD_BigNum(uint8_t num);  //ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 void LCD_Char(uint8_t c,uint8_t doublewidth); //ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (doublewidth=1 - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
@@ -19,8 +19,8 @@ void LCD_Printf(uint8_t* buf, uint8_t size); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿
 uint8_t LCD_X,LCD_Y;
 uint8_t tx_buffer[129];
 
-#define SSD1306_I2C_ADDRESS					 0x78
-#define SSD1306_I2C_H_ADDRESS				 0x3C
+#define SSD1306_I2C_ADDRESS					 0x78<<1
+#define SSD1306_I2C_H_ADDRESS				 0x3C<<1
 // size
 #define SSD1306_LCDWIDTH                      128
 #define SSD1306_LCDHEIGHT                     64
@@ -59,7 +59,7 @@ uint8_t tx_buffer[129];
 #define SSD1306_VERT_AND_RIGHT_HORIZ_SCROLL   0x29
 #define SSD1306_VERT_AND_LEFT_HORIZ_SCROLL    0x2A
 
-#define COMAND		                            0x00
-#define DATA		                              0x40
+#define COMAND		                          0x00
+#define DATA		                          0x40
 
 #endif
