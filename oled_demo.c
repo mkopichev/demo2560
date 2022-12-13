@@ -21,7 +21,7 @@ I2C ���������� ������������ CVAVR (i
 #include "include/oled_demo.h"
 #include "include/ssd1306_lib_new.h"
 
-void IntToStr(uint8_t* st,int n)//16 bit int to str uint8_t ?????????????????
+void IntToStr(uint8_t* st,uint16_t n)//16 bit int to str uint8_t ?????????????????
 {
  uint8_t tmp2;
  uint16_t tmp=10000,tmpn,ind=0;
@@ -53,19 +53,17 @@ void IntToStr(uint8_t* st,int n)//16 bit int to str uint8_t ?????????????????
  st[ind]=0;
 }
 
-
-
-void main(void)
+void demo_oled(void)
 {
 uint8_t tmp,counter=0;
 uint8_t str[20];
-// Crystal Oscillator division factor: 1
-#pragma optsize-
+// // Crystal Oscillator division factor: 1
+// #pragma optsize-
 CLKPR=(1<<CLKPCE);
 CLKPR=(0<<CLKPCE) | (0<<CLKPS3) | (0<<CLKPS2) | (0<<CLKPS1) | (0<<CLKPS0);
-#ifdef _OPTIMIZE_SIZE_
-#pragma optsize+
-#endif
+// #ifdef _OPTIMIZE_SIZE_
+// #pragma optsize+
+// #endif
 
 //I2C �����
 DDRD &= ~(1<<0);//SCL
@@ -73,13 +71,11 @@ DDRD &= ~(1<<1);//SDA
 PORTD |= (1<<0);//pull-up
 PORTD |= (1<<1);//pull-up
 
-
-
 #ifdef I2C_hard
  // TWI initialization
  // Mode: TWI Master
  // Bit Rate: 100 kHz
- twi_master_init(100);
+ I2cInit();
 #else
  // Bit-Banged I2C Bus initialization
  // I2C Port: PORTD
@@ -99,13 +95,13 @@ PORTD |= (1<<1);//pull-up
  
  for(tmp=0;tmp<3;tmp++)//�������� ������
   {
-    LCD_DrawImage(dog0);  
-    LCD_DrawImage(dog1);
-    LCD_DrawImage(dog2);
-    LCD_DrawImage(dog3);
-    LCD_DrawImage(dog4);
-    LCD_DrawImage(dog5);
-    LCD_DrawImage(dog6);        
+    // LCD_DrawImage(dog0);  
+    // LCD_DrawImage(dog1);
+    // LCD_DrawImage(dog2);
+    // LCD_DrawImage(dog3);
+    // LCD_DrawImage(dog4);
+    // LCD_DrawImage(dog5);
+    // LCD_DrawImage(dog6);        
   } 
   
    LCD_Commmand(COMAND, SSD1306_INVERTDISPLAY); 
@@ -113,7 +109,9 @@ PORTD |= (1<<1);//pull-up
    _delay_ms(5000);
    LCD_Commmand(COMAND, SSD1306_NORMALDISPLAY);
    LCD_DrawImage(0);//CLEAR
-      
+
+   PORTH|=(1<<5);
+
    LCD_Goto(0,1); 
    LCD_Printf("������� ������ �����",0);  //  ����� �� �������
    LCD_Goto(0,3); 

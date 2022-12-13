@@ -1,10 +1,14 @@
+#ifndef SSD1306_LIB_NEW_H
+#define SSD1306_LIB_NEW_H
+
 #include "utils.h"
 #include "fonts_pictures_oled.h"
+#include "i2c_basics.h"
 
 void LCD_init(void);  //��������� ������������� �������
 void LCD_Commmand(uint8_t ControByte, uint8_t DataByte); //������� ������� ��� ������
 void LCD_Goto(uint8_t x, uint8_t y);    //���������� ����������
-void LCD_DrawImage(PROGMEM uint8_t *image); //������� �������� �� ����  (0)- ������� ����� �������
+void LCD_DrawImage(uint8_t* image); //������� �������� �� ����  (0)- ������� ����� �������
 void LCD_Contrast(uint8_t set_contrast); //��������� ��������� �� 0 �� 255
 void LCD_BigNum(uint8_t num);  //����� ������� ����
 void LCD_Char(uint8_t c,uint8_t doublewidth); //����� ������� (doublewidth=1 - ������� ������)
@@ -55,5 +59,7 @@ uint8_t tx_buffer[129];
 #define SSD1306_VERT_AND_RIGHT_HORIZ_SCROLL   0x29
 #define SSD1306_VERT_AND_LEFT_HORIZ_SCROLL    0x2A
 
-#define COMAND		                          0x00
-#define DATA		                          0x40
+#define COMAND		                            0x00
+#define DATA		                              0x40
+
+#endif

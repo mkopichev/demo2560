@@ -60,7 +60,11 @@ void LCD_Commmand(uint8_t ControByte, uint8_t DataByte)
  #ifdef I2C_hard 
   tx_buffer[0]=ControByte;
   tx_buffer[1]=DataByte;
-  twi_master_trans(SSD1306_I2C_H_ADDRESS,tx_buffer,2,0,0);
+  I2cStart();
+  I2cTransmitByte(SSD1306_I2C_H_ADDRESS);
+  for(uint8_t i=0; i < 2; i++) I2cTransmitByte(tx_buffer[i]);
+  I2cStop();
+  // twi_master_trans(SSD1306_I2C_H_ADDRESS,tx_buffer,2,0,0);
  #else
   i2c_start();
   i2c_write(SSD1306_I2C_ADDRESS);
@@ -87,7 +91,7 @@ void LCD_Contrast(uint8_t set_contrast)
   LCD_Commmand(COMAND, set_contrast);
 }
 
-void LCD_DrawImage(PROGMEM uint8_t *image)//if (0) - clear screen
+void LCD_DrawImage(uint8_t* image)//if (0) - clear screen
 {
  uint16_t x;
  uint8_t tmp;
@@ -104,7 +108,11 @@ void LCD_DrawImage(PROGMEM uint8_t *image)//if (0) - clear screen
    else
     tx_buffer[x+1]=image[tmp*128+x];
   }
-  twi_master_trans(SSD1306_I2C_H_ADDRESS,tx_buffer,129,0,0);
+  I2cStart();
+  I2cTransmitByte(SSD1306_I2C_H_ADDRESS);
+  for(uint8_t i=0; i < 129; i++) I2cTransmitByte(tx_buffer[i]);
+  I2cStop();
+  // twi_master_trans(SSD1306_I2C_H_ADDRESS,tx_buffer,129,0,0);
   #else    
    i2c_start();
    i2c_write(SSD1306_I2C_ADDRESS);
@@ -142,7 +150,11 @@ void LCD_Char(uint8_t c,uint8_t doublewidth)
    }
   } 
   tx_buffer[x+1]=0;
-  twi_master_trans(SSD1306_I2C_H_ADDRESS,tx_buffer,7+doublewidth*5,0,0);
+  I2cStart();
+  I2cTransmitByte(SSD1306_I2C_H_ADDRESS);
+  for(uint8_t i=0; i < (7+doublewidth*5); i++) I2cTransmitByte(tx_buffer[i]);
+  I2cStop();
+  // twi_master_trans(SSD1306_I2C_H_ADDRESS,tx_buffer,7+doublewidth*5,0,0);
  #else
   i2c_start();
   i2c_write(SSD1306_I2C_ADDRESS);
@@ -188,8 +200,12 @@ void LCD_BigNum(uint8_t num)
    for (x=0; x<24; x++)
    {
     tx_buffer[x+1]=BigNum[num][z*24+x]; 
-   }                       
-   twi_master_trans(SSD1306_I2C_H_ADDRESS,tx_buffer,25,0,0);
+   }   
+   I2cStart();
+   I2cTransmitByte(SSD1306_I2C_H_ADDRESS);
+   for(uint8_t i=0; i < 25; i++) I2cTransmitByte(tx_buffer[i]);
+   I2cStop();                    
+  //  twi_master_trans(SSD1306_I2C_H_ADDRESS,tx_buffer,25,0,0);
    LCD_Goto(LCD_X,LCD_Y+1);          
   }
  #else  
@@ -242,7 +258,11 @@ void LCD_DrawArrow(uint8_t del)
     else
      tx_buffer[x+1]=0;
    }
-   twi_master_trans(SSD1306_I2C_H_ADDRESS,tx_buffer,11,0,0);
+   I2cStart();
+   I2cTransmitByte(SSD1306_I2C_H_ADDRESS);
+   for(uint8_t i=0; i < 11; i++) I2cTransmitByte(tx_buffer[i]);
+   I2cStop(); 
+  //  twi_master_trans(SSD1306_I2C_H_ADDRESS,tx_buffer,11,0,0);
   #else
   i2c_start();
   i2c_write(SSD1306_I2C_ADDRESS);

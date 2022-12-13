@@ -1,0 +1,13 @@
+{
+  "AVR.reporter.arguments": [
+    "-C"
+  ],
+  "AVR.source.compiler": "/opt/homebrew/bin/avr-gcc",
+  "AVR.programmer.tool": "/opt/homebrew/bin/avrdude",
+  "AVR.source.libraries": [],
+  "AVR.device.type": "atmega2560",
+  "AVR.device.frequency": 11059200,
+  "AVR.programmer.type": "usbasp",
+  "AVR.programmer.port": "usb",
+  "AVR.programmer.rate": 125000
+}
