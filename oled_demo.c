@@ -21,7 +21,7 @@ I2C ���������� ������������ CVAVR (i
 #include "include/oled_demo.h"
 #include "include/ssd1306_lib_new.h"
 
-void IntToStr(uint8_t* st,uint16_t n)//16 bit int to str uint8_t ?????????????????
+void IntToStr(uint8_t* st, int16_t n)//16 bit int to str uint8_t ?????????????????
 {
  uint8_t tmp2;
  uint16_t tmp=10000,tmpn,ind=0;
@@ -71,22 +71,10 @@ DDRD &= ~(1<<1);//SDA
 PORTD |= (1<<0);//pull-up
 PORTD |= (1<<1);//pull-up
 
-#ifdef I2C_hard
  // TWI initialization
  // Mode: TWI Master
  // Bit Rate: 100 kHz
  I2cInit();
-#else
- // Bit-Banged I2C Bus initialization
- // I2C Port: PORTD
- // I2C SDA bit: 1
- // I2C SCL bit: 0
- // Bit Rate: 100 kHz
- // Note: I2C settings are specified in the
- // Project|Configure|C Compiler|Libraries|I2C menu.
- i2c_init();                                        
-#endif 
- 
  
  _delay_ms(100);
  LCD_init();
@@ -99,6 +87,9 @@ PORTD |= (1<<1);//pull-up
     LCD_DrawImage(dog1);
     LCD_DrawImage(dog2);
     LCD_DrawImage(dog3);      
+    LCD_DrawImage(dog4);
+    LCD_DrawImage(dog5);
+    LCD_DrawImage(dog6);
   } 
   
    LCD_Commmand(COMAND, SSD1306_INVERTDISPLAY); 

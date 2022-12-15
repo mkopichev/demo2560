@@ -8,7 +8,7 @@
 void LCD_init(void);  //��������� ������������� �������
 void LCD_Commmand(uint8_t ControByte, uint8_t DataByte); //������� ������� ��� ������
 void LCD_Goto(uint8_t x, uint8_t y);    //���������� ����������
-void LCD_DrawImage(const uint8_t* image); //������� �������� �� ����  (0)- ������� ����� �������
+void LCD_DrawImage(const uint8_t* PROGMEM image); //������� �������� �� ����  (0)- ������� ����� �������
 void LCD_Contrast(uint8_t set_contrast); //��������� ��������� �� 0 �� 255
 void LCD_BigNum(uint8_t num);  //����� ������� ����
 void LCD_Char(uint8_t c,uint8_t doublewidth); //����� ������� (doublewidth=1 - ������� ������)
