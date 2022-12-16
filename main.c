@@ -6,17 +6,14 @@
 
 #define PROGRAM_ROUTINE OLED_DEMO
 
-int main(void){
-  
-  DDRH|=(1<<5);
-
-  #if(PROGRAM_ROUTINE == OLED_DEMO)
-    demo_oled();
-  #elif(PROGRAM_ROUTINE == WIFI_DEMO)
-    demo_WiFi();
-  #elif(PROGRAM_ROUTINE == COMPLEX_DEMO)
-    my2560_demo();
-  #endif
+int main(void) {
+#if (PROGRAM_ROUTINE == OLED_DEMO)
+  demo_oled();
+#elif (PROGRAM_ROUTINE == WIFI_DEMO)
+  demo_WiFi();
+#elif (PROGRAM_ROUTINE == COMPLEX_DEMO)
+  my2560_demo();
+#endif
 
   return 0;
 }

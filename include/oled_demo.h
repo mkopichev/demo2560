@@ -1,13 +1,12 @@
 #ifndef OLED_DEMO_H
 #define OLED_DEMO_H
 
-//�����������, ���� ���� I2C
-
-
-
-#include "i2c_basics.h"
 #include "fonts_pictures_oled.h"
-#include "ssd1306_lib_new.h" 
+#include "i2c_basics.h"
+#include "ssd1306_lib_new.h"
+
+#include <avr/interrupt.h>
+#include <util/delay.h>
 
 void demo_oled(void);
 

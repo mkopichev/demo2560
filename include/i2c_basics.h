@@ -1,4 +1,4 @@
-/* 
+/*
 for apparatus i2c
 freq control
 sending/receiving a byte
@@ -8,13 +8,14 @@ start/stop conditions
 #ifndef I2C_BASICS_H_
 #define I2C_BASICS_H_
 
-#include "utils.h"
+#include <avr/io.h>
+#include <stdint.h>
+#include <stdlib.h>
 
-//������/������ �� I2C
 #define W 0
 #define R 1
 
-#define SCL_FREQ 100000 //kHz
+#define SCL_FREQ 100000 // kHz
 
 #define VACANT 0
 #define OCCUPIED 1
