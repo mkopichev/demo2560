@@ -1,5 +1,4 @@
 /*******************************************************
- *
 SSD1306 OLED demo lkz VS Code atmega2560
 ssd1306_lib_new.c - OLED library
 fonts_pictures_oled.c - fonts and pictures
