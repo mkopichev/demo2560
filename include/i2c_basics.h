@@ -10,7 +10,6 @@ start/stop conditions
 
 #include <avr/io.h>
 #include <stdint.h>
-#include <stdlib.h>
 
 #define W 0
 #define R 1
