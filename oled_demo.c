@@ -78,7 +78,7 @@ void demo_oled(void) {
   _delay_ms(1);
   sei();
   // dog animation
-  for (tmp = 0; tmp < 3; tmp++) {
+  for (tmp = 0; tmp < 4; tmp++) {
     LCD_DrawImage(dog0);
     LCD_DrawImage(dog1);
     LCD_DrawImage(dog2);
@@ -90,7 +90,7 @@ void demo_oled(void) {
 
   LCD_Commmand(COMAND, SSD1306_INVERTDISPLAY);
   LCD_DrawImage(mishaniya);
-  _delay_ms(5000);
+  _delay_ms(3000);
   LCD_Commmand(COMAND, SSD1306_NORMALDISPLAY);
   LCD_DrawImage(0); // CLEAR
 
