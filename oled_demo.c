@@ -94,7 +94,7 @@ void demo_oled(void) {
   LCD_DrawImage(0); // CLEAR
 
   LCD_Goto(0, 1);
-  LCD_Printf("РћР±С‹С‡РЅС‹Р№ С‚РµРєСЃС‚", 0); // show on display
+  LCD_Printf("Русский текст", 0); // show on display
   LCD_Goto(0, 3);
   LCD_Printf("BIGGER ONE!", 1); // show on display
   while (1) {
