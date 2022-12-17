@@ -77,7 +77,7 @@ void demo_oled(void) {
   _delay_ms(1);
   sei();
   // dog animation
-  for (tmp = 0; tmp < 4; tmp++) {
+  for (tmp = 0; tmp <= 3; tmp++) {
     LCD_DrawImage(dog0);
     LCD_DrawImage(dog1);
     LCD_DrawImage(dog2);
@@ -94,7 +94,7 @@ void demo_oled(void) {
   LCD_DrawImage(0); // CLEAR
 
   LCD_Goto(0, 1);
-  LCD_Printf("Русский текст", 0); // show on display
+  LCD_Printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ", 0); // show on display
   LCD_Goto(0, 3);
   LCD_Printf("BIGGER ONE!", 1); // show on display
   while (1) {
