@@ -77,14 +77,28 @@ void demo_oled(void) {
   _delay_ms(1);
   sei();
   // dog animation
+//   for (tmp = 0; tmp <= 3; tmp++) {
+//     LCD_DrawImage(dog0);
+//     LCD_DrawImage(dog1);
+//     LCD_DrawImage(dog2);
+//     LCD_DrawImage(dog3);
+//     LCD_DrawImage(dog4);
+//     LCD_DrawImage(dog5);
+//     LCD_DrawImage(dog6);
+//   }
+
   for (tmp = 0; tmp <= 3; tmp++) {
-    LCD_DrawImage(dog0);
-    LCD_DrawImage(dog1);
-    LCD_DrawImage(dog2);
-    LCD_DrawImage(dog3);
-    LCD_DrawImage(dog4);
-    LCD_DrawImage(dog5);
-    LCD_DrawImage(dog6);
+    LCD_DrawImage(spitz0);
+    LCD_DrawImage(spitz1);
+    LCD_DrawImage(spitz2);
+    LCD_DrawImage(spitz3);
+    LCD_DrawImage(spitz4);
+    LCD_DrawImage(spitz5);
+    LCD_DrawImage(spitz6);
+    LCD_DrawImage(spitz7);
+    LCD_DrawImage(spitz8);
+    LCD_DrawImage(spitz9);
+    LCD_DrawImage(spitz10);
   }
 
   LCD_Commmand(COMAND, SSD1306_INVERTDISPLAY);
