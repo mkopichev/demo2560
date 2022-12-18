@@ -77,15 +77,15 @@ void demo_oled(void) {
   _delay_ms(1);
   sei();
   // dog animation
-//   for (tmp = 0; tmp <= 3; tmp++) {
-//     LCD_DrawImage(dog0);
-//     LCD_DrawImage(dog1);
-//     LCD_DrawImage(dog2);
-//     LCD_DrawImage(dog3);
-//     LCD_DrawImage(dog4);
-//     LCD_DrawImage(dog5);
-//     LCD_DrawImage(dog6);
-//   }
+  //   for (tmp = 0; tmp <= 3; tmp++) {
+  //     LCD_DrawImage(dog0);
+  //     LCD_DrawImage(dog1);
+  //     LCD_DrawImage(dog2);
+  //     LCD_DrawImage(dog3);
+  //     LCD_DrawImage(dog4);
+  //     LCD_DrawImage(dog5);
+  //     LCD_DrawImage(dog6);
+  //   }
 
   for (tmp = 0; tmp <= 3; tmp++) {
     LCD_DrawImage(spitz0);
