@@ -80,7 +80,7 @@ void LCD_Contrast(uint8_t set_contrast) {
 }
 
 // if (0) - clear screen
-void LCD_DrawImage(const uint8_t* image) {
+void LCD_DrawImage(const uint8_t *image) {
   uint16_t x;
   uint8_t tmp;
   for (tmp = 0; tmp < 8; tmp++) {
@@ -163,7 +163,7 @@ void LCD_BigNum(uint8_t num) {
   LCD_Goto(LCD_X, y_s);
 }
 
-void LCD_Printf(uint8_t* buf, uint8_t size) {
+void LCD_Printf(char *buf, uint8_t size) {
 
   while (*buf != 0) {
     if (size == 0) {

@@ -20,7 +20,7 @@ Mishanja edition version :)
 #include "include/oled_demo.h"
 
 // 16 bit int to str uint8_t ?
-void IntToStr(uint8_t *st, int16_t n) {
+void IntToStr(char *st, int16_t n) {
   uint8_t tmp2;
   int16_t tmp = 10000, tmpn, ind = 0;
   if (n < 0) {
@@ -51,7 +51,7 @@ void IntToStr(uint8_t *st, int16_t n) {
 
 void demo_oled(void) {
   uint8_t tmp, counter = 0;
-  uint8_t str[20];
+  char str[20];
   // // Crystal Oscillator division factor: 1
   // #pragma optsize-
   CLKPR = (1 << CLKPCE);
@@ -94,9 +94,10 @@ void demo_oled(void) {
   LCD_DrawImage(0); // CLEAR
 
   LCD_Goto(0, 1);
-  LCD_Printf("������� �����", 0); // show on display
+  LCD_Printf("Русские буквы", 0); // show on display
   LCD_Goto(0, 3);
-  LCD_Printf("BIGGER ONE!", 1); // show on display
+  LCD_Printf("BIGGER LETTERS", 1); // show on display
+
   while (1) {
     counter++;
     LCD_Goto(5, 4);

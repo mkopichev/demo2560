@@ -5,8 +5,8 @@
 #include <stdint.h>
 
 extern const uint8_t PROGMEM arrow[10];
-extern const uint8_t PROGMEM LCD_Buffer[0x0500];
-extern const uint8_t PROGMEM BigNum[15][96];
+extern const char PROGMEM LCD_Buffer[0x0500];
+extern const char PROGMEM BigNum[15][96];
 
 // 7 running dog pictures
 extern const uint8_t PROGMEM dog0[1024];
