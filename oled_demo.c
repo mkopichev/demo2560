@@ -97,9 +97,6 @@ void demo_oled(void)
         LCD_DrawImage(spitz5);
         LCD_DrawImage(spitz6);
         LCD_DrawImage(spitz7);
-        LCD_DrawImage(spitz8);
-        LCD_DrawImage(spitz9);
-        LCD_DrawImage(spitz10);
     }
 
     LCD_Commmand(COMAND, SSD1306_INVERTDISPLAY);
@@ -109,9 +106,9 @@ void demo_oled(void)
     LCD_DrawImage(0); // CLEAR
 
     LCD_Goto(0, 1);
-    LCD_Printf("Русские буквы", 0); // show on display
+    LCD_Printf("Small letters", 0); // show on display
     LCD_Goto(0, 3);
-    LCD_Printf("BIGGER LETTERS", 1); // show on display
+    LCD_Printf("BIG LETTERS", 1); // show on display
 
     while (1) {
         counter++;

@@ -27,9 +27,6 @@ extern const uint8_t PROGMEM spitz4[1024];
 extern const uint8_t PROGMEM spitz5[1024];
 extern const uint8_t PROGMEM spitz6[1024];
 extern const uint8_t PROGMEM spitz7[1024];
-extern const uint8_t PROGMEM spitz8[1024];
-extern const uint8_t PROGMEM spitz9[1024];
-extern const uint8_t PROGMEM spitz10[1024];
 // end of jumping spitz
 
 extern const uint8_t PROGMEM tiger_image[1024];
