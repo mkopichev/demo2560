@@ -47,7 +47,7 @@ void LCD_init(void)
     LCD_Commmand(COMAND, SSD1306_DISPLAYALLON_RESUME);
 
     // Non-inverted display
-    // LCD_Commmand(COMAND, SSD1306_NORMALDISPLAY);
+    LCD_Commmand(COMAND, SSD1306_NORMALDISPLAY);
 
     // Turn display on
     LCD_Contrast(255);
