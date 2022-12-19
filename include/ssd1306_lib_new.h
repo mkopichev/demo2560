@@ -10,7 +10,7 @@ void LCD_Commmand(uint8_t ControByte, uint8_t DataByte);
 // goto coordinates on the screen
 void LCD_Goto(uint8_t x, uint8_t y);
 // output picture from FLASH
-void LCD_DrawImage(const uint8_t *image);
+void LCD_DrawImage(const uint8_t* image);
 // setup contrast 0...255
 void LCD_Contrast(uint8_t set_contrast);
 // output of BIG digits and symbols
@@ -18,7 +18,7 @@ void LCD_BigNum(uint8_t num);
 // output of the symbol (doublewidth=1 - double width)
 void LCD_Char(uint8_t c, uint8_t doublewidth);
 // type the string (size=0-tiny, 1-small, 2-middle, 3-HUGE (digits only))
-void LCD_Printf(char *buf, uint8_t size);
+void LCD_Printf(char* buf, uint8_t size);
 
 uint8_t LCD_X, LCD_Y;
 uint8_t tx_buffer[129];

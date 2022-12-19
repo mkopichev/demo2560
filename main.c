@@ -6,14 +6,15 @@
 
 #define PROGRAM_ROUTINE OLED_DEMO
 
-int main(void) {
+int main(void)
+{
 #if (PROGRAM_ROUTINE == OLED_DEMO)
-  demo_oled();
+    demo_oled();
 #elif (PROGRAM_ROUTINE == WIFI_DEMO)
-  demo_WiFi();
+    demo_WiFi();
 #elif (PROGRAM_ROUTINE == COMPLEX_DEMO)
-  my2560_demo();
+    my2560_demo();
 #endif
 
-  return 0;
+    return 0;
 }
