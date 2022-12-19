@@ -17,7 +17,7 @@ void LCD_Contrast(uint8_t set_contrast);
 void LCD_BigNum(uint8_t num);
 // output of the symbol (doublewidth=1 - double width)
 void LCD_Char(uint8_t c, uint8_t doublewidth);
-// type the string (size=0-tiny, 1-small, 2-middle, 3-HUGE (digits only))
+// type the string (size = 0 - small, 1 - middle, 2 - HUGE (digits only))
 void LCD_Printf(char* buf, uint8_t size);
 
 uint8_t LCD_X, LCD_Y;

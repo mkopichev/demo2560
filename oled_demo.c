@@ -96,9 +96,9 @@ void demo_oled(void)
     LCD_DrawImage(0); // CLEAR
 
     LCD_Goto(0, 1);
-    LCD_Printf("Small letters", 0); // show on display
+    LCD_Printf("Small symb", 0); // show on display
     LCD_Goto(0, 3);
-    LCD_Printf("BIG LETTERS", 1); // show on display
+    LCD_Printf("BIGGER_SYMB", 1); // show on display
 
     while (1) {
         counter++;
