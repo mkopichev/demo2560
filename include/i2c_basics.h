@@ -16,7 +16,7 @@ start/stop conditions
 
 #define SCL_FREQ 100000 // kHz
 
-#define VACANT 0
+#define VACANT   0
 #define OCCUPIED 1
 
 void I2cInit(void);

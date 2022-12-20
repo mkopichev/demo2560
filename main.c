@@ -1,13 +1,12 @@
 #include "include/oled_demo.h"
 
-#define OLED_DEMO 1
-#define WIFI_DEMO 2
+#define OLED_DEMO    1
+#define WIFI_DEMO    2
 #define COMPLEX_DEMO 3
 
 #define PROGRAM_ROUTINE OLED_DEMO
 
-int main(void)
-{
+int main(void) {
 #if (PROGRAM_ROUTINE == OLED_DEMO)
     demo_oled();
 #elif (PROGRAM_ROUTINE == WIFI_DEMO)

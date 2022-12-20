@@ -20,8 +20,7 @@ Mishanja edition version :)
 #include "include/oled_demo.h"
 
 // 16 bit int to str uint8_t ?
-void IntToStr(char* st, int16_t n)
-{
+void IntToStr(char *st, int16_t n) {
     uint8_t tmp2;
     int16_t tmp = 10000, tmpn, ind = 0;
     if (n < 0) {
@@ -50,8 +49,7 @@ void IntToStr(char* st, int16_t n)
     st[ind] = 0;
 }
 
-void demo_oled(void)
-{
+void demo_oled(void) {
     uint8_t tmp, counter = 0;
     char str[20];
     // // Crystal Oscillator division factor: 1

@@ -2,41 +2,35 @@
 
 uint8_t i2c_mutex = VACANT;
 
-void I2cInit(void)
-{
+void I2cInit(void) {
     TWBR = 48; //(uint8_t)((F_CPU/SCL_FREQ)-16)/(2*4);
 }
 
-void I2cStart(void)
-{
+void I2cStart(void) {
     TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
-    while (!(TWCR & (1 << TWINT)))
-        ;
+    while (!(TWCR & (1 << TWINT))) continue;
 }
 
-void I2cStop(void) { TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO); }
+void I2cStop(void) {
+    TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO);
+}
 
-void I2cTransmitByte(uint8_t data)
-{
+void I2cTransmitByte(uint8_t data) {
     TWDR = data;
     TWCR = (1 << TWINT) | (1 << TWEN);
-    while (!(TWCR & (1 << TWINT)))
-        ;
+    while (!(TWCR & (1 << TWINT))) continue;
 }
 
-uint8_t I2cReceiveByte(uint8_t is_last_byte)
-{
+uint8_t I2cReceiveByte(uint8_t is_last_byte) {
     if (is_last_byte)
         TWCR = (1 << TWINT) | (1 << TWEN);
     else
         TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWEA);
-    while (!(TWCR & (1 << TWINT)))
-        ;
+    while (!(TWCR & (1 << TWINT))) continue;
     return (TWDR);
 }
 
-void I2cAcquire(void)
-{
+void I2cAcquire(void) {
     while (1) {
         if (i2c_mutex == VACANT) {
             i2c_mutex = OCCUPIED;
@@ -45,4 +39,6 @@ void I2cAcquire(void)
     }
 }
 
-void I2cRelease(void) { i2c_mutex = VACANT; }
+void I2cRelease(void) {
+    i2c_mutex = VACANT;
+}

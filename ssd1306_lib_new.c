@@ -8,8 +8,7 @@ Initially is written for CVAVR.
 
 #include "include/ssd1306_lib_new.h"
 
-void LCD_init(void)
-{
+void LCD_init(void) {
     // return;
     // delay_ms(10);
     LCD_Commmand(COMAND, SSD1306_SETDISPLAYCLOCKDIV);
@@ -56,8 +55,7 @@ void LCD_init(void)
     LCD_Goto(0, 0);
 }
 
-void LCD_Commmand(uint8_t ControByte, uint8_t DataByte)
-{
+void LCD_Commmand(uint8_t ControByte, uint8_t DataByte) {
     tx_buffer[0] = ControByte;
     tx_buffer[1] = DataByte;
     I2cStart();
@@ -67,25 +65,22 @@ void LCD_Commmand(uint8_t ControByte, uint8_t DataByte)
     I2cStop();
 }
 
-void LCD_Goto(uint8_t x, uint8_t y)
-{
+void LCD_Goto(uint8_t x, uint8_t y) {
     LCD_X = x;
     LCD_Y = y;
     // initial setup
-    LCD_Commmand(COMAND, 0xB0 + y); // set address of the coordinate`s initials
-    LCD_Commmand(COMAND, x & 0x0f); // LSB
+    LCD_Commmand(COMAND, 0xB0 + y);        // set address of the coordinate`s initials
+    LCD_Commmand(COMAND, x & 0x0f);        // LSB
     LCD_Commmand(COMAND, 0x10 | (x >> 4)); // MSB
 }
 
-void LCD_Contrast(uint8_t set_contrast)
-{
+void LCD_Contrast(uint8_t set_contrast) {
     LCD_Commmand(COMAND, SSD1306_SETCONTRAST);
     LCD_Commmand(COMAND, set_contrast);
 }
 
 // if (0) - clear screen
-void LCD_DrawImage(const uint8_t* image)
-{
+void LCD_DrawImage(const uint8_t *image) {
     uint16_t x;
     uint8_t tmp;
     for (tmp = 0; tmp < 8; tmp++) {
@@ -106,8 +101,7 @@ void LCD_DrawImage(const uint8_t* image)
     }
 }
 
-void LCD_Char(uint8_t c, uint8_t doublewidth)
-{
+void LCD_Char(uint8_t c, uint8_t doublewidth) {
     uint8_t x = 0;
 
     tx_buffer[0] = DATA;
@@ -132,8 +126,7 @@ void LCD_Char(uint8_t c, uint8_t doublewidth)
         LCD_X += 8;
 }
 
-void LCD_BigNum(uint8_t num)
-{
+void LCD_BigNum(uint8_t num) {
     uint8_t x = 0;
     uint8_t z = 0;
 
@@ -170,8 +163,7 @@ void LCD_BigNum(uint8_t num)
     LCD_Goto(LCD_X, y_s);
 }
 
-void LCD_Printf(char* buf, uint8_t size)
-{
+void LCD_Printf(char *buf, uint8_t size) {
 
     while (*buf != 0) {
         if (size == 0) {
@@ -186,8 +178,7 @@ void LCD_Printf(char* buf, uint8_t size)
     }
 }
 
-void LCD_DrawArrow(uint8_t del)
-{
+void LCD_DrawArrow(uint8_t del) {
     uint8_t x;
     tx_buffer[0] = 0b01000000;
     for (x = 0; x < 10; x++) {
