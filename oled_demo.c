@@ -75,6 +75,7 @@ void demo_oled(void) {
     LCD_init();
     _delay_ms(1);
     sei();
+    
     // dog animation
     for (tmp = 0; tmp <= 3; tmp++) {
         LCD_DrawImage(spitz0);
