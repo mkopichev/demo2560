@@ -190,7 +190,12 @@ void demo_oled(void) {
     _delay_ms(100);
     LCD_init();
     _delay_ms(1);
+<<<<<<< HEAD
 
+=======
+    sei();
+    
+>>>>>>> 1a455a67f5c9c2aac8737bc42dff5ddbbd5610a3
     // dog animation
     // for(tmp = 0; tmp <= 4; tmp++) {
     //     LCD_DrawImage(spitz0);
