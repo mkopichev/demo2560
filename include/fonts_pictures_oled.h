@@ -18,16 +18,21 @@ extern const uint8_t PROGMEM dog5[1024];
 extern const uint8_t PROGMEM dog6[1024];
 // end of the running dog pictures
 
-// jumping spitz
-extern const uint8_t PROGMEM spitz0[1024];
-extern const uint8_t PROGMEM spitz1[1024];
-extern const uint8_t PROGMEM spitz2[1024];
-extern const uint8_t PROGMEM spitz3[1024];
-extern const uint8_t PROGMEM spitz4[1024];
-extern const uint8_t PROGMEM spitz5[1024];
-extern const uint8_t PROGMEM spitz6[1024];
-extern const uint8_t PROGMEM spitz7[1024];
-// end of jumping spitz
+// walking dog
+extern const uint8_t PROGMEM dog2_0[1024];
+extern const uint8_t PROGMEM dog2_1[1024];
+extern const uint8_t PROGMEM dog2_2[1024];
+extern const uint8_t PROGMEM dog2_3[1024];
+extern const uint8_t PROGMEM dog2_4[1024];
+extern const uint8_t PROGMEM dog2_5[1024];
+extern const uint8_t PROGMEM dog2_6[1024];
+extern const uint8_t PROGMEM dog2_7[1024];
+extern const uint8_t PROGMEM dog2_8[1024];
+extern const uint8_t PROGMEM dog2_9[1024];
+extern const uint8_t PROGMEM dog2_10[1024];
+extern const uint8_t PROGMEM dog2_11[1024];
+extern const uint8_t PROGMEM dog2_12[1024];
+// end of walking dog
 
 extern const uint8_t PROGMEM tiger_image[1024];
 extern const uint8_t PROGMEM avr_image[1024];
