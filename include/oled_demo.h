@@ -5,6 +5,7 @@
 #include "i2c_basics.h"
 #include "ssd1306_lib_new.h"
 
+#include <avr/cpufunc.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
 

@@ -8,7 +8,7 @@ void I2cInit(void) {
 
 void I2cStart(void) {
     TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
-    while (!(TWCR & (1 << TWINT))) continue;
+    while(!(TWCR & (1 << TWINT))) continue;
 }
 
 void I2cStop(void) {
@@ -18,21 +18,21 @@ void I2cStop(void) {
 void I2cTransmitByte(uint8_t data) {
     TWDR = data;
     TWCR = (1 << TWINT) | (1 << TWEN);
-    while (!(TWCR & (1 << TWINT))) continue;
+    while(!(TWCR & (1 << TWINT))) continue;
 }
 
 uint8_t I2cReceiveByte(uint8_t is_last_byte) {
-    if (is_last_byte)
+    if(is_last_byte)
         TWCR = (1 << TWINT) | (1 << TWEN);
     else
         TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWEA);
-    while (!(TWCR & (1 << TWINT))) continue;
+    while(!(TWCR & (1 << TWINT))) continue;
     return (TWDR);
 }
 
 void I2cAcquire(void) {
-    while (1) {
-        if (i2c_mutex == VACANT) {
+    while(1) {
+        if(i2c_mutex == VACANT) {
             i2c_mutex = OCCUPIED;
             break;
         }
