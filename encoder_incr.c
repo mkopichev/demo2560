@@ -4,18 +4,18 @@ uint8_t PB4_B = 1, PB5_B = 1, enc_counter = 0;
 uint8_t led_on = 0;
 
 ISR(PCINT0_vect) {
-    if(PINB4  == 0) {
-        if((PINB5 != 0) && (PB5_B == 1))
+    if(PINB4 == 0) {
+        if(((PINB & (1 << 5)) != 0) && (PB5_B == 1))
             enc_counter--;
     } else {
-        if((PINB5 == 0) && (PB4_B == 1))
+        if(((PINB & (1 << 5)) == 0) && (PB4_B == 1))
             enc_counter++;
     }
-    if(PINB4)
+    if(PINB & (1 << 4))
         PB4_B = 1;
     else
         PB4_B = 0;
-    if(PINB5)
+    if(PINB & (1 << 5))
         PB5_B = 1;
     else
         PB5_B = 0;
