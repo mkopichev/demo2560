@@ -1,11 +1,11 @@
 #ifndef OLED_DEMO_H
 #define OLED_DEMO_H
 
+#include "encoder_rgb_led.h"
 #include "fonts_pictures_oled.h"
 #include "i2c_basics.h"
 #include "ssd1306_lib_new.h"
 
-#include <avr/cpufunc.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
 

@@ -1,4 +1,4 @@
-# Demoprogram for atmega2560 demo module
+# DemoProg for atmega2560 demo module
 
 Demo code for checking the operation of atmega2560 module with SSD1306, ESP-12 and JDY-40.
 CVAVR original, VS Code changed (2022, december).
