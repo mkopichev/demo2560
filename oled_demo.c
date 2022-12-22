@@ -54,7 +54,7 @@ void demo_oled(void) {
 
     // TWI initialization
     // Mode: TWI Master
-    // Bit Rate: 100 kHz
+    // Bit Rate: 400 kHz
     I2cInit();
 
     _delay_ms(100);

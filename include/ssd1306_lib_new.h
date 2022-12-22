@@ -1,7 +1,11 @@
 #ifndef SSD1306_LIB_NEW_H
 #define SSD1306_LIB_NEW_H
 
+#include "fonts_pictures_oled.h"
+#include "i2c_basics.h"
 #include "oled_demo.h"
+
+#include <stdint.h>
 
 // init the display
 void LCD_init(void);
