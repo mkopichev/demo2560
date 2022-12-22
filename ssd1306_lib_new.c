@@ -1,11 +1,3 @@
-/*
-Library for SSD1306 OLED display.
-Initially is written for CVAVR.
-22.12.2015 Vinichenko A.V.
-29.07.2020 changed by Putov A.V.
-16.12.2022 Changed for VS Code by Belskiy G.V.
-*/
-
 #include "include/ssd1306_lib_new.h"
 
 void LCD_init(void) {
