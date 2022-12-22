@@ -1,3 +1,4 @@
+
 # DemoProg for atmega2560 demo module
 
 Demo code for checking the operation of atmega2560 module with SSD1306, ESP-12 and JDY-40.
@@ -18,16 +19,14 @@ Code send letter 'T' to JDY-40 via UART 9600 baud. USB-UART needed.
 Turn on voltage regulator!
 
 ## Files: 
+
 ssd1306_lib_new.c - ssd1306 OLED library
 
-    Initially is written for CVAVR.
-    
-    22.12.2015 Vinichenko A.V.
-    
-    29.07.2020 changed by Putov A.V.
-    
-    16.12.2022 changed for VS Code by Belskiy G.V.
-    
+>>Initially is written for CVAVR
+>>22.12.2015 Vinichenko A.V.
+>>29.07.2020 changed by Putov A.V.
+>>16.12.2022 changed for VS Code by Belskiy G.V.
+
 fonts_pictures_oled.c - fonts and pictures
 
 Display is using harware TWI.
