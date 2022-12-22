@@ -9,6 +9,7 @@
 
 #include <avr/interrupt.h>
 #include <avr/io.h>
+#include <stdint.h>
 #include <util/delay.h>
 
 void demo_oled(void);
