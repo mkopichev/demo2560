@@ -4,7 +4,7 @@ uint8_t GLOBAL_GRB[3] = {0, 0, 0};
 
 // for RGB_LED 11,0592 MHz
 void Led(uint8_t red, uint8_t green, uint8_t blue) {
-    for(uint8_t i = (1 << 7); i >= 1; i >>= 1) // Green
+    for(uint8_t i = (1 << 7); i >= 1; i = (i >> 1)) // Green
     {
         if((green & i) > 0) {
             PORTA |= (1 << 7); // should be 0.9us
@@ -23,7 +23,7 @@ void Led(uint8_t red, uint8_t green, uint8_t blue) {
             PORTA &= ~(1 << 7);
         } // should be 0.9us but 1.35us also works ok
     }
-    for(uint8_t i = (1 << 7); i >= 1; i >>= 1) // Red
+    for(uint8_t i = (1 << 7); i >= 1; i = (i >> 1)) // Red
     {
         if((red & i) > 0) {
             PORTA |= (1 << 7); // should be 0.9us
@@ -43,7 +43,7 @@ void Led(uint8_t red, uint8_t green, uint8_t blue) {
             PORTA &= ~(1 << 7);
         } // should be 0.9us but 1.35us also works ok
     }
-    for(uint8_t i = (1 << 7); i >= 1; i >>= 1) // Blue
+    for(uint8_t i = (1 << 7); i >= 1; i = (i >> 1)) // Blue
     {
         if((blue & i) > 0) {
             PORTA |= (1 << 7); // should be 0.9us
