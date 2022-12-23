@@ -41,10 +41,8 @@ void demo_oled(void) {
     // #pragma optsize+
     // #endif
 
-    DDRA |= (1 << 7); // RGB_led
-    PCMSK0 = (1 << PCINT5) | (1 << PCINT4);
-    PCMSK1 = (1 << PCINT12);
-    PCICR = (1 << PCIE1) | (1 << PCIE0);
+    Ws2812bInit(); //set rgb pin
+    EncoderIncrInit(); //set encoder pins
 
     // TWI initialization
     // Mode: TWI Master
@@ -117,7 +115,7 @@ void demo_oled(void) {
             LCD_BigNum(' ');
         LCD_Printf(str, 2);
 
-        hue_to_rgb(counter << 3);
+        HueToRgb(counter << 3);
         if(led_on > 0) {
             Led(GLOBAL_GRB[1], GLOBAL_GRB[0], GLOBAL_GRB[2]);
         } else {

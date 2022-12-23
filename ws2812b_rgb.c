@@ -2,6 +2,10 @@
 
 uint8_t GLOBAL_GRB[3] = {0, 0, 0};
 
+void Ws2812bInit(void) {
+    DDRA |= (1 << 7); // RGB_led
+}
+
 // for RGB_LED 11,0592 MHz
 void Led(uint8_t red, uint8_t green, uint8_t blue) {
     for(uint8_t i = (1 << 7); i >= 1; i = (i >> 1)) // Green
@@ -64,7 +68,7 @@ void Led(uint8_t red, uint8_t green, uint8_t blue) {
     }
 }
 
-void hue_to_rgb(uint8_t hue) {
+void HueToRgb(uint8_t hue) {
     if(hue <= 85) {
         GLOBAL_GRB[2] = (85 - hue) * 3; // GLOBAL_GRB[0]RB[2]
         GLOBAL_GRB[1] = hue * 3;

@@ -7,7 +7,8 @@
 
 extern uint8_t GLOBAL_GRB[3];
 
+void Ws2812bInit(void);
 void Led(uint8_t red, uint8_t green, uint8_t blue);
-void hue_to_rgb(uint8_t hue);
+void HueToRgb(uint8_t hue);
 
 #endif
