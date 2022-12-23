@@ -41,12 +41,6 @@ void demo_oled(void) {
     // #pragma optsize+
     // #endif
 
-    // I2C ports
-    DDRD &= ~(1 << 0); // SCL
-    DDRD &= ~(1 << 1); // SDA
-    PORTD |= (1 << 0); // pull-up
-    PORTD |= (1 << 1); // pull-up
-
     DDRA |= (1 << 7); // RGB_led
     PCMSK0 = (1 << PCINT5) | (1 << PCINT4);
     PCMSK1 = (1 << PCINT12);

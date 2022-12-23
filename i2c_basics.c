@@ -3,7 +3,13 @@
 uint8_t i2c_mutex = VACANT;
 
 void I2cInit(void) {
-    TWBR = 48; //(uint8_t)((F_CPU/SCL_FREQ)-16)/(2*4);
+    // I2C ports
+    DDRD &= ~(1 << 0); // SCL
+    DDRD &= ~(1 << 1); // SDA
+    PORTD |= (1 << 0); // pull-up
+    PORTD |= (1 << 1); // pull-up
+    //TWBR = 67; or TWBR = (uint8_t)((F_CPU/(SCL_FREQ*1000))-16)/(2*4);
+    TWBR = (uint8_t)((F_CPU/(SCL_FREQ*1000))-16)/(2*4); //20kHz 
 }
 
 void I2cStart(void) {
