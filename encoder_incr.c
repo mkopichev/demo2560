@@ -4,7 +4,7 @@ uint8_t PB4_B = 1, PB5_B = 1, enc_counter = 0;
 uint8_t led_on = 0;
 
 ISR(PCINT0_vect) {
-    if(PINB4 == 0) {
+    if((PINB & (1 << 4)) == 0) {
         if(((PINB & (1 << 5)) != 0) && (PB5_B == 1))
             enc_counter--;
     } else {
