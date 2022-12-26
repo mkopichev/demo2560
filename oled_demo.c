@@ -41,8 +41,8 @@ void demo_oled(void) {
     // #pragma optsize+
     // #endif
 
-    Ws2812bInit(); //set rgb pin
-    EncoderIncrInit(); //set encoder pins
+    Ws2812bInit();     // set rgb pin
+    EncoderIncrInit(); // set encoder pins
 
     // TWI initialization
     // Mode: TWI Master
@@ -54,7 +54,7 @@ void demo_oled(void) {
     _delay_ms(1);
 
     // dog animation
-    for(tmp = 0; tmp <= 3; tmp++) {
+    for(tmp = 0; tmp <= 9; tmp++) {
         LCD_DrawImage(dog2_0);
         LCD_DrawImage(dog2_1);
         LCD_DrawImage(dog2_2);

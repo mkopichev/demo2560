@@ -14,7 +14,7 @@ start/stop conditions
 #define W 0
 #define R 1
 
-#define SCL_FREQ 20 // kHz
+#define SCL_FREQ 100000 // Hz
 
 #define VACANT   0
 #define OCCUPIED 1

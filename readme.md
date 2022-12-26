@@ -31,7 +31,7 @@ fonts_pictures_oled.c - fonts and pictures
 
 Display is using harware TWI.
 
-Harware TWI works on 400k Hz speed.
+Harware TWI works on 100k Hz speed.
 
 To work with another controller or ports, enable and configure TWI in
 your own projects (if programmatic). If less of flash output less pictures,

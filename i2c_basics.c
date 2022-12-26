@@ -8,8 +8,8 @@ void I2cInit(void) {
     DDRD &= ~(1 << 1); // SDA
     PORTD |= (1 << 0); // pull-up
     PORTD |= (1 << 1); // pull-up
-    //TWBR = 67; or TWBR = (uint8_t)((F_CPU/(SCL_FREQ*1000))-16)/(2*4);
-    TWBR = (uint8_t)((F_CPU/(SCL_FREQ*1000))-16)/(2*4); //20kHz 
+    //TWBR = 67; or TWBR = (uint8_t)((F_CPU/(SCL_FREQ*1000))-16)/2;
+    TWBR = (uint8_t)((F_CPU/SCL_FREQ)-16)/2; //100kHz 
 }
 
 void I2cStart(void) {
