@@ -93,11 +93,11 @@ void demo_oled(void) {
     LCD_Printf("N", 1);
     LCD_Goto(0, 7);
     LCD_Printf("C", 1);
-    LCD_Goto(116, 5);
+    LCD_Goto(118, 5);
     LCD_Printf("E", 1);
-    LCD_Goto(116, 6);
+    LCD_Goto(118, 6);
     LCD_Printf("N", 1);
-    LCD_Goto(116, 7);
+    LCD_Goto(118, 7);
     LCD_Printf("C", 1);
     LCD_Goto(0, 3);
     LCD_Printf("Nothing recieved", 0);
